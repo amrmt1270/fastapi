@@ -9,8 +9,9 @@ router = APIRouter(tags = ['Memos'], prefix='/memos')
 async def create_memo(memo: InsertAndUpdateMemoSchema, db : AsyncSession = Depends(db.get_dbsession)):
     try:
         await memo_crud.insert_memo(db, memo)
+        return ResponseSchema(message = 'メモが正常に登録されました')
     except Exception as e :
-        raise HTTPException(status_code=400, details = 'メモの登録に失敗しました')
+        raise HTTPException(status_code=400, detail = 'メモの登録に失敗しました')
     
 @router.get('/', response_model = list[MemoSchema])
 async def get_memo_list(db : AsyncSession = Depends(db.get_dbsession)):

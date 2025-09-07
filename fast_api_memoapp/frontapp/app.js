@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8000/memos/';
+const apiUrl = 'http://localhost:5500/memos/';
 
 let editingMemoId = null;
 
