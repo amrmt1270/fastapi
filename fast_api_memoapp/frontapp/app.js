@@ -159,4 +159,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', fetchAndDisplayMemos);
+document.addEventListener('DOMContentLoaded', fetchAndDisplayMemos)

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 class InsertAndUpdateMemoSchema(BaseModel) :
-    titel : str = Field(...,
+    title : str = Field(...,
                         description='メモのタイトルを入力してください。少なくとも1文字以上必要です。',
                         example = '明日のアジェンダ', min_length = 1)
     description : str = Field(...,
@@ -9,7 +9,7 @@ class InsertAndUpdateMemoSchema(BaseModel) :
                             example = '会議で話すトピック:プロジェクトの進行状況')
     
 class MemoSchema(BaseModel):
-    model_id :int = Field(...,
+    memo_id :int = Field(...,
                         description='メモを一意に識別するID番号.データベースで自動的に割り当てられます。',
                         example = 123)
     
